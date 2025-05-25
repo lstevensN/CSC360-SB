@@ -1,13 +1,23 @@
 ﻿using System;
 
-class Program
+namespace CSC360_SB
 {
-    public static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine(" -- Start Program -- ");
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(" -- Start Program -- \n");
 
-        Console.WriteLine("\n"); // Do stuff here!
+            // -- CREATIONAL Design Pattern --
+            Console.WriteLine(">> CREATIONAL Design Pattern");
 
-        Console.WriteLine(" --  End Program  -- \n");
+            Singleton singleton1 = Singleton.GetInstance();
+            Singleton singleton2 = Singleton.GetInstance();
+
+            if (singleton1 == singleton2) Console.WriteLine("Singleton implementation succeeded!\n");
+            else Console.WriteLine("Singleton implementation failed.\n");
+
+            Console.WriteLine(" --  End Program  -- \n");
+        }
     }
 }
