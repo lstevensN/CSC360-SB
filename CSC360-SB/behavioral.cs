@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿// Referenced https://www.geeksforgeeks.org/iterator-pattern/ while making this, thank you!
+
 using System.Collections.Generic;
 
 namespace CSC360_SB
@@ -16,15 +16,19 @@ namespace CSC360_SB
     // Concrete Iterator
     public class CollectionIterator<T> : Iterator<T>
     {
+        // Collection to iterate through
         private Collection<T> collection;
 
+        // Current "iteration" index
         private int index = 0;
 
-
+        // Constructor
         public CollectionIterator(Collection<T> collection) { this.collection = collection; }
 
+        // Checks if collection has another/"next" element
         public override bool HasNext() { return index < collection.Size(); }
 
+        // Returns "next" element
         public override T Next()
         {
             if (HasNext()) return collection.Get(index++);
@@ -43,15 +47,19 @@ namespace CSC360_SB
     // Concrete Aggregate
     public class Collection<T> : IteratorAggregate<T>
     {
+        // Internal list
         private List<T> collection = new List<T>();
 
-
+        // Adds item to collection
         public void Add(T item) { collection.Add(item); }
 
+        // Gets item for collection (used for iteration)
         public T Get(int index) { return collection[index]; }
 
+        // Returns size of collection/internal list
         public int Size() { return collection.Count; }
         
+        // Creates a new iterator based on this collection
         public override Iterator<T> CreateIterator() { return new CollectionIterator<T>(this); }
     }
 }

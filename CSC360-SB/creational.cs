@@ -1,6 +1,4 @@
-﻿// Referenced https://refactoring.guru/design-patterns/singleton/csharp/example, thank you very much!
-
-using System;
+﻿// Referenced https://refactoring.guru/design-patterns/singleton/csharp/example here, thank you very much!
 
 namespace CSC360_SB
 {

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Referenced https://refactoring.guru/design-patterns/facade/csharp/example for this one, thank you so much!
+
+using System;
 
 namespace CSC360_SB
 {
@@ -20,6 +18,7 @@ namespace CSC360_SB
             this.subsystem2 = subsystem2;
         }
 
+        // Delegates/manages subsystem operations
         public string Operation()
         {
             string result = "> Facade: Start Subsystems:\n";
@@ -68,6 +67,7 @@ namespace CSC360_SB
     // Client
     public class Client
     {
+        // Client interacts with the Facade, providing easy/streamlined access to the subsystems
         public static void ClientCode(Facade facade)
         {
             Console.WriteLine(facade.Operation());

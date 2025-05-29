@@ -23,9 +23,9 @@ namespace CSC360_SB
             Collection<int> intCollection = new Collection<int>();
             Iterator<int> ICIterator = intCollection.CreateIterator();
 
-            intCollection.Add(1);
-            intCollection.Add(20);
             intCollection.Add(300);
+            intCollection.Add(20);
+            intCollection.Add(1);
 
             Console.WriteLine("> Int Collection Traversal:");
             while (ICIterator.HasNext()) Console.WriteLine(ICIterator.Next().ToString());
